@@ -2,12 +2,10 @@ import java.awt.Polygon;
 import java.awt.Color;
 import java.awt.Point;
 import java.awt.Graphics;
-import java.util.Optional;
-import java.util.List;
 
 public class Block extends GamePiece {
   public Block(Point inLoc){
-    super(inLoc, 25, 5.0);
+    super(inLoc, 25, 0.2);
   }
   
   @Override
@@ -22,6 +20,7 @@ public class Block extends GamePiece {
     g.setColor(Color.cyan);
     g.fillPolygon(tPoly);
     g.setColor(Color.black);
-    g.drawPolygon(tPoly);    
+    g.drawPolygon(tPoly);  
+    super.paint(g);  
   }
 }

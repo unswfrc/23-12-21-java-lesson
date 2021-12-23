@@ -1,15 +1,7 @@
-/*
-* edited by: Joel Perry, 45626715
-*            joel.perry@students.mq.edu.au
-* last edited: 25/10/21
-*/
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.time.Duration;
-import java.time.Instant;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.util.Optional;

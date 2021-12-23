@@ -4,7 +4,7 @@ import java.awt.Graphics;
 
 public class Ball extends GamePiece{
   public Ball(Point inLoc){
-      super(inLoc, 25, 0.5);
+      super(inLoc, 25, 0.0);
   }
   
   @Override
@@ -13,5 +13,6 @@ public class Ball extends GamePiece{
     g.fillOval((int)xLoc, (int)yLoc, 20, 20);
     g.setColor(Color.black);
     g.drawOval((int)xLoc, (int)yLoc, 20, 20);
+    super.paint(g);
   }
 }

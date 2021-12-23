@@ -12,8 +12,20 @@ public class GamePiece {
     xLoc = inLoc.x;
     yLoc = inLoc.y;
     score = inScore;
+    rot = 0;
     speed = 0.0;
     friction = inFriction;
+  }
+
+  public void bounce(Robot robt){
+    double dist = Math.sqrt(Math.pow(xLoc-robt.xLoc, 2) + Math.pow(yLoc-robt.yLoc, 2));
+    if(dist < 50){
+      rot = (int)Math.toDegrees(Math.atan((robt.yLoc-yLoc)/(robt.xLoc-xLoc)))-180;
+      System.out.println(rot);
+      speed = 10.0;
+
+    }
+    
   }
 
   public void decelerate(){
@@ -26,8 +38,8 @@ public class GamePiece {
   }
 
   public void move(){
-    xLoc += 0.2*Math.cos(Math.toRadians(rot));
-    yLoc += 0.2*Math.sin(Math.toRadians(rot));
+    xLoc += 0.01*speed*Math.cos(Math.toRadians(rot));
+    yLoc += 0.01*speed*Math.sin(Math.toRadians(rot));
   }
 
   public void release(double inSpeed, int inRot){
@@ -36,6 +48,7 @@ public class GamePiece {
   }
 
   public void paint(Graphics g){
-    System.out.println("something went wrong");
+    move();
+    decelerate();
   }
 }

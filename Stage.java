@@ -59,6 +59,7 @@ public class Stage {
 
     for(GamePiece gp : element){
       gp.paint(g);
+      gp.bounce(robt);
     }
   }
 }
